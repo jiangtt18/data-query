@@ -99,7 +99,7 @@ Companies: ${val}`
 function requestUrl(){
   return new Promise(function(resolve, reject){
     let query = new XMLHttpRequest();
-
+    let url = 'https://s3-us-west-2.amazonaws.com/bain-coding-challenge/data.json'
     query.onreadystatechange = function(e) {
       if (query.readyState === 4) {
         if (query.status === 200) {
@@ -113,10 +113,7 @@ function requestUrl(){
       reject('timeout')
     }
 
-    query
-    .open('GET',
-    'https://s3-us-west-2.amazonaws.com/bain-coding-challenge/data.json');
-
+    query.open('GET', url);
     query.send();
   })
 }
