@@ -36,8 +36,8 @@ function requestUrl(){
 # Instructions
 1. Unzip the folder and open up `query.html`
 1. To successfully use AJAX call, please follow steps below to avoid cross-origin restrictions and then refresh the page before you run the queries:
-  1. Chrome: install [Allow-control-Allow-Origin extension](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en) and then enable cross origin resource sharing
-  1. Safari: Safari -> Preferences -> Advanced, and then at the bottom tick `Show Develop Menu in menu bar`. In the `Develop Menu` tick `Disable Cross-Origin Restrictions`
+    1. Chrome: install [Allow-control-Allow-Origin extension](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en) and then enable cross origin resource sharing
+    1. Safari: Safari -> Preferences -> Advanced, and then at the bottom tick `Show Develop Menu in menu bar`. In the `Develop Menu` tick `Disable Cross-Origin Restrictions`
 
 1. You are able to run queries against the provided JSON file, and the result will be shown in the result textarea and developer console. You can resize the textarea by dragging bottom right conner.
 1. To change input JSON. Please head to `query.js` file and change url (line 102) to your desired url.
