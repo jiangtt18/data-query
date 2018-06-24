@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       let val = document.getElementById('state').value;
       let validCompanies = locate(val);
       output(validCompanies);
+      console.log(validCompanies)
   });
 
   // filter out companies founded before/after certain year
@@ -16,12 +17,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   let yrBtn = document.getElementById('yrbtn');
   yrBtn.addEventListener('click', function(){
     let val = document.getElementById('yr').value;
-    console.log(beforeBtn.checked);
-    console.log(val)
     let validCompanies = beforeBtn.checked
     ? findBefore(val)
     : findAfter(val)
     output(validCompanies);
+    console.log(validCompanies)
   });
 
   // filter out companies based on employee size
@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       let val = document.getElementById('employeeSize').value;
       let validCompanies = findCompanyBetweenSize(val);
       output(validCompanies);
+      console.log(validCompanies)
   });
 
 
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       let val = document.getElementById('type').value;
       let validCompanies = findType(val);
       output(validCompanies);
+      console.log(validCompanies)
   });
 
 
@@ -54,22 +56,26 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
   function findBefore(year){
+    if(checkformat(year)){
     let numYear = Number(year);
     return lists.reduce(function(result, cur){
       let curYear = cur['year_founded'];
       if(curYear <= numYear) result.push(cur['company_name']);
       return result;
     },[]);
+    }
   }
 
 
   function findAfter(year){
+    if(checkformat(year)){
     let numYear = Number(year);
     return lists.reduce(function(result, cur){
       let curYear = cur['year_founded'];
       if(curYear >= numYear) result.push(cur['company_name']);
       return result;
     },[]);
+    }
   }
 
   function findCompanyBetweenSize(selected){
@@ -86,6 +92,21 @@ document.addEventListener('DOMContentLoaded', async () => {
       if(selected === curType) result.push(cur['company_name']);
         return result;
     },[]);
+  }
+
+  function checkformat(input){
+    console.log(typeof input)
+    if(input.length !== 4) {
+      alert('please input a correct format. Ex: 2000')
+      return false;
+    }
+    let n = Number(input);
+    console.log(n)
+    if(isNaN(n)){
+      alert('please input year!')
+      return false;
+    }
+    return true;;
   }
 
   function output(val) {
