@@ -7,7 +7,7 @@ The purpose of this project is to ingest the given JSON file, and return company
 1. Use AJAX to request JSON file. Use Javascript to build queries and show results in HTML.
 1. Store JSON file to SQL database. Use rails ActiveRecord to build queries in and show results in rails console.
 
-The first option is not ideal when JSON file is large. It's also hard to share with other users when JSON file is stored locally. The third option will be more beneficial  when there are more relational data or when you have a full stack website. For this particular project, the second option seems most suitable. Please refer to below code for AJAX challenge
+The first option is not ideal when JSON file is large. It's also hard to share with other users when JSON file is stored locally. The third option will be more beneficial  when there are more relational data or when you have a full stack website. For this particular project, the second option seems most suitable. Please refer to below code for AJAX call
 
 ``` JavaScript
 function requestUrl(){
